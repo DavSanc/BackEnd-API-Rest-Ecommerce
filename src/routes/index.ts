@@ -1,15 +1,11 @@
 /** Archivo central de enrutamiento */
 import { Router, Request, Response } from "express";
+import routeUsers from "./users";
+import routeProducts from './products'
 
 const router = Router();
 
-router.get( '/users',( req: Request, res: Response ) => {
-    const msg = 'Users';
-
-    console.log( msg );
-    res.send( `<h1>${ msg }</h1>`)
-    
-    
-});
+router.use( '/users', routeUsers );
+router.use( '/products', routeProducts)
 
 export default router;
