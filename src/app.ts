@@ -1,6 +1,7 @@
-import 'detenv/config';
+import 'dotenv/config';
 import express, { Request, Response} from 'express'
 import routeMain from './routes';
+import db from "./config/mongo.config";
 
 
 const app = express()
@@ -27,6 +28,11 @@ app.get( '/home', (req: Request, res: Response) => {
 
 /** Middleware */
 app.use( '/api', routeMain );
+
+// db()
+//     .then( () =>  console.log( `MongoDB se conecto correctamente`)) 
+        
+//     .catch( () => console.log( `MongoDB sufre un problema de conexion`))
 
 app.listen( PORT, () => {
     console.log(`Servidor lanzado en http://localhost:${ PORT } `);
