@@ -29,10 +29,10 @@ app.get( '/home', (req: Request, res: Response) => {
 /** Middleware */
 app.use( '/api', routeMain );
 
-// db()
-//     .then( () =>  console.log( `MongoDB se conecto correctamente`)) 
+db()
+    .then( () =>  console.log( `MongoDB se conecto correctamente`)) 
         
-//     .catch( () => console.log( `MongoDB sufre un problema de conexion`))
+    .catch( () => console.log( `MongoDB sufre un problema de conexion`))
 
 app.listen( PORT, () => {
     console.log(`Servidor lanzado en http://localhost:${ PORT } `);
