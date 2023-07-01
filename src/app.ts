@@ -25,7 +25,7 @@ app.get( '/home', (req: Request, res: Response) => {
     console.log( namePage );
     res.send(`<h1>${ namePage }</h1>`);    
 })
-
+app.use( express.json() )
 /** Middleware */
 app.use( '/api', routeMain );
 
