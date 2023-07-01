@@ -3,7 +3,7 @@ import { connect } from "mongoose";
  
 //Configuracion para la conexion con MongoDB
 async function dbConnect() : Promise<void> {
-    const DB_URI = 'mongodb://127.0.0.1:27017/webpasteleria';
+    const DB_URI = <string> process.env.DB_URI;
     await connect ( DB_URI );    
 }
 
