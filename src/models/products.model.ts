@@ -7,18 +7,46 @@ const productSchema = new Schema(
 
     // este objeto principal definira atributos del modelo
     {
-        name: {
+        name:{
+            type: String
+        },
+
+        id: {
+            type: Number,
+            required: true
+        },
+
+        price:{
+            type: Number
+        },
+
+        description:{
+            type: String
+        },
+
+        category: {
             type: String,
             required: true
         },
-        price: {
-            type: Number,
-            required: false
-        },
-        description:{
-            type: String
 
-        }
+        stock:{
+            type: String
+        },
+
+        portions:{
+            type: Number
+        },
+
+        image:{
+            type: String
+        },
+
+        delivaryDate:{
+            type: Date,
+            default: new Date
+        },
+        
+
     },
     // Definira configuraciones que se pueden aplicar en Mongoose para ese objeto
     {
