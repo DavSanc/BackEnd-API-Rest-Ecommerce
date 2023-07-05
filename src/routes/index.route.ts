@@ -6,6 +6,6 @@ import routeProducts from './products.route'
 const router = Router();
 
 router.use( '/users', routeUsers );
-router.use( '/products', routeProducts)
+router.use( '/products', routeProducts);
 
 export default router;

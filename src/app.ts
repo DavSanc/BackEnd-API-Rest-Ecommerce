@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3001;
 
 /*Routing: Enrutamiento*/
 //  http://localhost:3000/
+// La manera de crear una ruta
 app.get('/', ( req: Request, res: Response ) => {
     const message: string = 'Bienvenido a la API pasteleria web';
 
@@ -25,7 +26,8 @@ app.get( '/home', (req: Request, res: Response) => {
     console.log( namePage );
     res.send(`<h1>${ namePage }</h1>`);    
 })
-app.use( express.json() )
+app.use( express.json() );
+
 /** Middleware */
 app.use( '/api', routeMain );
 
