@@ -5,7 +5,7 @@ import {  createProduct, deleteProduct, getProduct, getProducts, updateProduct }
 const router = Router();
 
 router.get( '/', getProducts );
-router.get ( '/', getProduct );
+router.get ( '/:id', getProduct );
 router.post('/', createProduct );
 router.put('/', updateProduct );
 router.delete('/', deleteProduct );
