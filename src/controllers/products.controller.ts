@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 
-import { getAllProducts, getProductbyId, insertProduct } from "../services/product.service";
+import { getAllProducts, getProductbyId, insertProduct, removeProductByid } from "../services/product.service";
 
 async function getProducts(req: Request, res: Response) {
    try {
@@ -70,7 +70,21 @@ async function createProduct( req: Request, res: Response ) {
 }
 
 async function deleteProduct(req: Request, res: Response) {
-    console.log(`Elimina un producto por ID`);
+
+    const productId = req.params.id;
+
+    try {
+        const response = await removeProductByid(productId)
+        console.log(response );
+        res.json(response)
+        
+    } catch (error) {
+        console.log(`Error en la eliminicacion del producto id: ${ productId }`);
+        res.json ({
+            msg:'ERROR_DELETE_PRODUCT_BY_ID'
+        })
+        
+    }
     
 }
 
