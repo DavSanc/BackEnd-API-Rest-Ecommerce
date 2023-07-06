@@ -4,14 +4,14 @@ import routeMain from './routes/index.route';
 import db from "./config/mongo.config";
 
 
-const app = express()
+const app = express();
 const PORT = process.env.PORT || 3001;
 
 /*Routing: Enrutamiento*/
 //  http://localhost:3000/
 // La manera de crear una ruta
 app.get('/', ( req: Request, res: Response ) => {
-    const message: string = 'Bienvenido a la API pasteleria web';
+    const message : string = 'Bienvenido a la API pasteleria web';
 
     console.log(message ); //mensaje a la terminal
     res.send ( `<h1>${message}</h1>` ); // mensaje al navegador

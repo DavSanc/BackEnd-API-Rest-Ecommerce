@@ -20,13 +20,26 @@ async function updateProduct(req: Request, res: Response) {
 
 async function createProduct( req: Request, res: Response ) {
     
-    console.log(req.body);
     
+    
+    try {
+
+        const data = await insertProduct( req.body );
+        
+        console.log( data );
+        res.json( data );
+    }
+     catch (error) {
+        console.log( `error en la insercion del producto` );
+        res.json({
+            msg: `Error en la insercion del producto`
+        });
+        
+    }
 
     const data = await insertProduct( req.body );
 
-    console.log( data );
-    res.json( data );
+   
     
     
 }
