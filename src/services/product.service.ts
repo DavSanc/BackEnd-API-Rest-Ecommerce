@@ -22,8 +22,7 @@ const updateProductById = async ( productId: string, updateProduct: Product) => 
     return await ProductModel.findOneAndUpdate(
         { _id: productId},     //ide del documento que deseamos actualizar
         updateProduct,          // el docuemnto por el que vamos a actualizar
-    { new: true }             // configuracion para el comando Update                       
-
+        { new: true }             // configuracion para el comando Update                       
     );
 }
 

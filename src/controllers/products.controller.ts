@@ -46,13 +46,13 @@ async function updateProduct(req: Request, res: Response) {
 
     try {
         const response = await updateProductById( id, body  )
-        console.log( response );
-        res.json(response); 
         
+        console.log( response );
+        res.json(response);   
     } catch (error) {
         console.log( `error en la actualizacion del producto con id ${id}` );
         res.json({
-            msg: `ERROR_UPDATE_ID`
+            msg: `ERROR_UPDATE_BY_ID`
         });
     }
     
