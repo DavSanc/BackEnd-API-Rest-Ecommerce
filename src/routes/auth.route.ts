@@ -1,15 +1,9 @@
-import { Router, Request, Response } from "express";
-import {  createProduct, deleteProduct, getProduct, getProducts, updateProduct } from "../controllers/products.controller";
+import { Router} from "express";
+import { login, register } from "../controllers/auth.controller";
 
 const router = Router();
 
-router.post( '/resister', (req: Request, res: Response) =>{
-    console.log( 'registra usuario' );
-    res.send( 'Registra usuario' );
-});
-router.post('/login', (req: Request, res: Response) => {
-    console.log('Login usuario');
-    res.send( 'Login usuario' )    
-});
+router.post( '/register', register);
+router.post('/login', login);
 
 export default router;
