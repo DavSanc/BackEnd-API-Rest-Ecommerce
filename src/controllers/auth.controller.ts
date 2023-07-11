@@ -24,7 +24,9 @@ const login = async (req: Request, res: Response) => {
 
     try {
      const response = await loginUser( user );  
+
      console.log( response );
+     res.json( { response});
      
 
     } catch (error) {

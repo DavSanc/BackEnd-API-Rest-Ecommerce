@@ -57,6 +57,23 @@ async function updateProduct(req: Request, res: Response) {
     }
     
 }
+async function partialUpdateProduct (req: Request, res: Response) {
+    const { params: { id } } = req;     //SI NO SE ENTIENDE HACERLO DE LA FORMA CONVENCIONAL
+    const{ body } = req;
+
+    try {
+        const response = await updateProductById( id, body  )
+        
+        console.log( response );
+        res.json(response);   
+    } catch (error) {
+        console.log( `error en la actualizacion del producto con id ${id}` );
+        res.json({
+            msg: `ERROR_UPDATE_BY_ID`
+        });
+    }
+    
+}
 
 async function createProduct( req: Request, res: Response ) {
     
@@ -106,5 +123,7 @@ export {
     getProduct,
     updateProduct,
     createProduct,
-    deleteProduct
+    deleteProduct,
+    partialUpdateProduct
 };
+
