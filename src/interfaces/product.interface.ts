@@ -8,5 +8,6 @@ export interface Product {
     stock: number
     portions: number;
     image: string;
+    userId: number;
     deliveryDate: Date
 }

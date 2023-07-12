@@ -41,6 +41,10 @@ const productSchema = new Schema(
             type: String
         },
 
+        userId:{
+            type: Number,
+            required: true
+        },
         delivaryDate:{
             type: Date,
             default: new Date
